@@ -106,6 +106,14 @@ fprintf('\n');
 % not need to be normalized.
 price = 0; % You should change this
 
+Xtest=[1 1650 3];
+
+Xnorm=Xtest(:,2:3);
+
+Xnorm=(Xnorm.-mu)./sigma;
+
+Xtest=[1 Xnorm];
+price=Xtest*theta;
 
 % ============================================================
 
@@ -151,7 +159,9 @@ fprintf('\n');
 % ====================== YOUR CODE HERE ======================
 price = 0; % You should change this
 
+Xtest=[1 1650 3];
 
+price=Xtest*theta;
 % ============================================================
 
 fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...

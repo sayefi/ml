@@ -18,12 +18,16 @@ for iter = 1:num_iters
     %
 
 
-
-
-
-
-
-
+    %prediction=theta(1)*X(:,1)+theta(2)*X(:,2)+theta(2)*X(:,3);
+    
+    prediction=X*theta;
+    error=prediction-y;
+    
+    theta=theta.-alpha/m*sum(error.*X)';
+    
+    %theta(1)=theta(1)-alpha/m*sum((prediction-y).*X(:,1));
+    %theta(2)=theta(2)-alpha/m*sum((prediction-y).*X(:,2));
+    %theta(3)=theta(3)-alpha/m*sum((prediction-y).*X(:,3));
 
 
 
